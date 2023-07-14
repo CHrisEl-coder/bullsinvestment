@@ -1,0 +1,130 @@
+@media ((min-width: 400px) and (max-width: 800px)) {
+    #header {
+        overflow: hidden;
+    }
+    #nav-main .fa-bars {
+        display: block;
+        font-weight: bold;
+        font-size: 25px;
+        
+    }
+    #nav-main .fa-bars:hover {
+        color: rgb(13, 13, 94);
+        cursor: pointer;
+    }
+
+    #nav-bar ul {
+        position: relative;
+          top: -1rem;
+          left: 23px;
+        
+
+    }
+
+    #nav-bar ul li {
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0;  
+     }
+
+     #nav-bar {
+        display: none;
+     }
+
+     
+
+    #nav-main {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 10px;
+        position: relative;
+    }
+
+    .show {
+        display: block !important;
+    }
+    #nav-bar ul li a:hover {
+        padding: 10px 10px;
+        color: #e0eaf5;
+    }
+
+}
+
+@media (min-width: 810px) {
+    #header {
+        display: flex;
+        justify-content: space-between;
+    }
+    #nav-bar ul {
+        display: flex;
+        margin: 40px 10px;
+    }
+
+    #nav-bar ul li {
+        margin: 0 15px;
+        font-weight: bold;
+        
+    }
+    .fa-bars {
+        display: none;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+#header {
+    background-color: #001540;
+    padding: 2rem auto;
+    position: fixed;
+        top: 0;
+    width: 100%;
+    z-index: 50;
+}
+
+#logo {
+    height: 100px;
+}
+
+.fa-bars {
+    color: snow;
+}
+
+li {
+    list-style: none;
+    position: relative; 
+}
+
+li a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    color: snow;
+    font-family: sans-serif;
+    transition: all .3s ease-in-out;
+}
+
+li::after {
+    position: absolute;
+      bottom: -8px;
+      left: 0;
+    content: '';
+    border-top: 2px solid transparent;
+    width: 100%;
+    transition: all .3s ease-in-out;
+    
+}
+
+li:hover::after {
+    border-top: 2px solid snow !important;
+}
+
+li:hover a {
+    cursor: pointer;
+    opacity: .5;
+}
