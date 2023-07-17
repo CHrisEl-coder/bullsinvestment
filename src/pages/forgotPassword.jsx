@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../signIn.css'
 import { useLocation, useNavigate } from 'react-router'
 import logo from '../logo.png'
@@ -7,12 +7,37 @@ import { RiUser6Line } from 'react-icons/ri'
 import { HiOutlineMail } from 'react-icons/hi'
 import Fb from '../component/fb'
 import Google from '../component/Google'
+import { getAuth, sendPasswordResetEmail } from 'firebase/auth'
 
 
 
 export default function ForgotPassword() {
   const navigate = useNavigate()
   const location = useLocation()
+
+  async function onSubmit (e) {
+	e.preventDefault()
+	try {
+		const auth = getAuth
+		await sendPasswordResetEmail(auth, email)
+	} catch (error) {
+		
+	}
+  }
+
+  const [form, setForm] = useState(
+	{
+		email: ''
+	}
+  )
+
+  const {email} = form  
+
+  function onChange (e) {
+	setForm((prevState) => ({
+		...prevState, [e.target.id]: e.target.value,
+	}))
+  }
   return (
     <>
     <section className="sec-2">
@@ -33,14 +58,14 @@ export default function ForgotPassword() {
 				</div>
 			</div>
 			<div className="right">
-				<form className="fm">
+				<form className="fm" onSubmit={onSubmit}>
 					<div className="shape"></div>
 
 					<div className="user-pen"><TbUserCircle id="user"/></div>
 					
 					<div className="form-container">
 						<div className="input-div">
-							<input type="email" placeholder="Enter Email Address" />
+							<input type="email" name="email" id="email" value={email} placeholder="Enter Email Address" onChange={onChange}/>
 							<HiOutlineMail />
 						</div>
 					</div>

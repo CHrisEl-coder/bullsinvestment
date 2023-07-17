@@ -9,6 +9,7 @@ import Contact from './pages/contact';
 import Profile from './pages/profile';
 import Home from './pages/home';
 import Footer from './component/footer';
+import Private from './component/PrivateRoute';
 
 function App() {
   return (
@@ -16,8 +17,12 @@ function App() {
      <Router>
       <NavBar/>
       <Routes>
+        
         <Route path='/' element={<Home />} />
-        <Route path='/profile' element={<Profile />} />
+        <Route path='/profile' element={<Private/>}>
+          <Route path='/profile' element={<Profile />} />
+        </Route>
+        
         <Route path='/sign-up' element={<SignUp />} />
         <Route path='/sign-in' element={<SignIn />} />
         <Route path='/faq' element={<Faq />} />

@@ -6,9 +6,19 @@ import { Link } from 'react-router-dom'
 import { CiMoneyCheck1, CiWallet } from 'react-icons/ci'
 import '../dash.css'
 import pic from '../ck.jpg'
+import { useState } from 'react'
+import { getAuth } from 'firebase/auth'
 
 
 export default function Profile() {
+  const auth = getAuth()
+
+  const [userData, setUserData] = useState({
+    name: auth.currentUser.displayName,
+    image: auth.currentUser.imageURL
+  })
+
+  const {name, image} = userData
   return (
     <div className='body'>
       <div className='sidebar'>
@@ -57,7 +67,7 @@ export default function Profile() {
 
           <div className="user-wrapper">
             <img src={pic} alt=''/>
-            <h4>Hello, John Doe</h4>
+            <h4>Hello, {name}</h4>
           </div>
 
         </header>

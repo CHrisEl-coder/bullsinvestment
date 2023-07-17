@@ -77,7 +77,7 @@ export default function SignIn() {
                 <input type={ShowPassword ? 'text' : 'password'} placeholder="Password" id="password" value={password} onChange={onChange}/>
                 {ShowPassword ? <VscEye id="eye" className='ic' onClick={() => {
                   setShowPassword((prevState) => !prevState) }}/> : <VscEyeClosed id='eye' className='ic' onClick={() =>  {
-                  setShowPassword((prevState => !prevState))
+                  setShowPassword((prevState) => !prevState)
                 }} />}
               </div>
             </div>

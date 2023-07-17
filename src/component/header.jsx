@@ -26,9 +26,6 @@ export default function NavBar () {
                         navigate('/faq')
                     }}>FAQ</a></li>
                     <li className="dwn"><a onClick={() => {
-                        navigate('/about-us')
-                    }}>About Us</a></li>
-                    <li className="dwn"><a onClick={() => {
                         navigate('/sign-up')
                     }}>Sign-Up</a></li>
                     <li className="dwn"><a onClick={() => {
