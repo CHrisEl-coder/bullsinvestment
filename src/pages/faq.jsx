@@ -1,6 +1,5 @@
 import React from 'react'
 
-import { Link } from 'react-router-dom'
 
 export default function Faq() {
   return (
@@ -12,7 +11,7 @@ export default function Faq() {
 
      <div>
       <h1 className='pl-6 font-extrabold text-xl text-slate-900 font-mono '>How To Buy Bitcoin ?</h1>
-      <p className='text-xs indent-6 font-semibold italic'>They are various platforms that offer the buy and sell of <strong className='text-lg text-red-950'>Bitcoin</strong> and other forms of crypto currencies, Some of these platforms include <Link to="www.binance.com" className='text-lg hover:text-slate-950 font-bold transition-all duration-300'>Binance</Link>, <Link to="www.huobi.com" className='text-lg hover:text-slate-950 font-bold transition-all duration-300'>Huobi</Link>, <Link to="www.kucoin.com" className='text-lg hover:text-slate-950 font-bold transition-all duration-300'>Kucoin</Link>, and <Link to="www.luno.com" className='text-lg hover:text-slate-950 font-bold transition-all duration-300'>Luno</Link>.</p>
+      <p className='text-xs indent-6 font-semibold italic'>They are various platforms that offer the buy and sell of <strong className='text-lg text-red-950'>Bitcoin</strong> and other forms of crypto currencies, Some of these platforms include <a href="https://binance.com" target="_blank" rel="noopener noreferrer"className='text-lg hover:text-slate-950 font-bold transition-all duration-300'>Binance</a>, <a href="https://huobi.com" target='_blank' rel='noopener noreferrer' className='text-lg hover:text-slate-950 font-bold transition-all duration-300'>Huobi</a>, <a href="https://kucoin.com" target='_blank' rel='noopener noreferrer' className='text-lg hover:text-slate-950 font-bold transition-all duration-300'>Kucoin</a>, and <a href="https://luno.com" target='_blank' rel='noopener noreferrer' className='text-lg hover:text-slate-950 font-bold transition-all duration-300'>Luno</a>.</p>
       <p className='mt-4 mb-4 font-semibold text-lg text-slate-900 pl-4'>Follow The Steps Below: 
 
         <ul className='text-black mt-3 pl-6'>

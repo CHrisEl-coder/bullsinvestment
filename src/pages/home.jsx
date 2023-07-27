@@ -4,11 +4,11 @@ import { SiBookstack } from 'react-icons/si'
 import { BsPiggyBank } from 'react-icons/bs'
 import { GiPayMoney } from 'react-icons/gi'
 import { AiOutlineDollarCircle } from 'react-icons/ai'
-import { BsFillArrowRightCircleFill, BsFillLeftRightCircleFill } from 'react-icons/bs'
 import { LuShieldCheck } from 'react-icons/lu'
 
 
 export default function Home() {
+	
   return (
     <>
     <section className='sec1'>
@@ -20,7 +20,7 @@ export default function Home() {
 	</section>
 
 	<section>
-		<div className="sec-main">
+		<div className="sec-main" id='services'>
 			<div>
 				<SiBookstack className="icons"/>
 				<h3>Learn More</h3>
@@ -48,18 +48,31 @@ export default function Home() {
 		<h2>
 			Why Choose Us
 		</h2>
-		<div className="sec-concept">
-			<BsFillArrowRightCircleFill id="prev" /> 
+		<div>
 
 			<div>
 				<LuShieldCheck className="shield" id="chooseUs-icons"/>
-				<h3>Top Notch Security</h3>
-				<p>
+				<h3 className='pl-3 font-bold text-xl mb-3 font-mono text-white'>Top Notch Security</h3>
+				<p className='text-white italic mb-4 border-b-2 last:p-4'>
+					Our platform is fully secured, with one of the best TLS/SSL encryption.
+				</p>
+			</div>
+			<div>
+				<LuShieldCheck className="shield" id="chooseUs-icons"/>
+				<h3 className='font-bold text-white text-xl font-mono mb-3 pl-3'>Full Transparency</h3>
+				<p className='text-white italic mb-4 border-b-2 p-4'>
+					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto vel mollitia in libero inventore itaque, quo deleniti necessitatibus, cum amet ad ex sed accusantium corrupti velit, odio temporibus maxime quam.
+				</p>
+			</div>
+			<div>
+				<LuShieldCheck className="shield" id="chooseUs-icons"/>
+				<h3 className='font-mono font-bold text-white text-xl mb-3 pl-3'>Top Notch Security</h3>
+				<p className='text-white italic border-b-2 p-4 '>
 					Our platform is fully secured, with one of the best TLS/SSL encryption.
 				</p>
 			</div>
 
-			<i id="next" className="arr-right" ></i>
+			
 
 		</div>
 	</section> 

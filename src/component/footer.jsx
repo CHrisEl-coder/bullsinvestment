@@ -1,7 +1,9 @@
 import React from 'react'
 import '../footer.css'
+import { Link } from 'react-router-dom'
 
 export default function Footer() {
+
   return (
     <>
     <footer class="footer">
@@ -9,38 +11,35 @@ export default function Footer() {
 			<ul>
 				<h3>Info</h3>
 				<li>
-					<a href="#">About Us</a>
+					<Link to="/contact" className='redirect'>About Us</Link>
 				</li>
 				<li>
-					<a href="#">Contact Us</a>
+					<Link to="/contact" className='redirect'>Contact Us</Link>
 				</li>
 				<li>
-					<a href="#">Services</a>
+					<a href="#services" className='redirect'>Services</a>
 				</li>
 			</ul>
 			<ul>
 				<h3>Customer Care</h3>
 				<li>
-					<a href="#">Email</a>
+					<a href="mailto:bullsinvestment261@gmail.com" target="_blank" rel='noopener noreferrer' className='redirect'>Email</a>
 				</li>
 				<li>
-					<a href="#">FAQs</a>
-				</li>
-				<li>
-					<a href="#">Terms Of Use</a>
+					<Link to="/faq" className='redirect'>FAQs</Link>
 				</li>
 			</ul>
 
 			<ul>
 				<h3>Links</h3>
 				<li>
-					<a href="#">Buy Bitcoin</a>
+					<a href="https://luno.com" className='redirect'>Buy Bitcoin</a>
 				</li>
 				<li>
-					<a href="#">Login</a>
+					<Link to="/sign-in" className='redirect'>Login</Link>
 				</li>
 				<li>
-					<a href="#">Invest</a>
+					<Link to="/profile" className='redirect'>Invest</Link>
 				</li>
 			</ul>
 		</div>

@@ -27,7 +27,7 @@ footer {
     list-style: none;
 }
 
-.links ul li a {
+.redirect {
     text-decoration: none;
     color: #101e4a;
     font-weight: bold;
