@@ -2,17 +2,21 @@ import React from 'react'
 import logo from '../logo.png'
 import { FaBars } from 'react-icons/fa'
 import '../head.css'
-import { useLocation, useNavigate } from 'react-router'
+import { useNavigate } from 'react-router'
 
 export default function NavBar () {
   const navigate = useNavigate()
-  const location = useLocation()
+
+  function onClick(e) {
+    const element  = document.getElementById("nav-bar")
+    element.classList.toggle("show")
+  }
   return (
     <section id="sign-head">
         <div id="header">
             <div id="nav-main">
-                <img src={logo} id='logo'/>
-                <FaBars className="fa fa-bars"/>
+                <img src={logo} alt='logo' id='logo'/>
+                <FaBars className="fa fa-bars" onClick={onClick} id='bars'/>
             </div>
             <nav id='nav-bar'>
                 <ul>

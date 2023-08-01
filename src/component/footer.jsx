@@ -6,8 +6,8 @@ export default function Footer() {
 
   return (
     <>
-    <footer class="footer">
-		<div class="links">
+    <footer className="footer">
+		<div className="links">
 			<ul>
 				<h3>Info</h3>
 				<li>

@@ -1,11 +1,10 @@
 import React from 'react'
-import logo from '../logo.png'
 import { SiBookstack } from 'react-icons/si'
 import { BsPiggyBank } from 'react-icons/bs'
 import { GiPayMoney } from 'react-icons/gi'
 import { AiOutlineDollarCircle } from 'react-icons/ai'
 import { LuShieldCheck } from 'react-icons/lu'
-
+import Testimonial from '../component/Testimonial'
 
 export default function Home() {
 	
@@ -107,17 +106,8 @@ export default function Home() {
 			</ul>
 		</div>
 	</section>
-	<section className="reviews">
-
-		<div>
-			<img src={logo} alt='site logo'/>
-			<p className="rev">The platforms customer are are really friendly and patient, replies very fast i really recommend this platform</p>
-			<p className="name">Wakand G.</p>
-			<p className="state">Wakanda massachuchets</p>
-		</div>
-	</section>
-
-	<div className="ready">
+	<Testimonial />
+	<div className='ready'>
 		<p>
 			Are You Ready To Invest With Us
 		</p>

@@ -44,15 +44,16 @@ export default function SignUp() {
 	createUserWithEmailAndPassword(auth, email, password)
 	  .then(() => {
 		updateProfile(auth.currentUser, {
-			displayName: name
+			displayName: name,
 		})
-		console.log()
+
 		const userInfo = {...SignData}
 		userInfo.timeStamp = serverTimestamp()
 		userInfo.Capital = 0
 		userInfo.Earning = 0
 
 		setDoc(doc(db, 'BullsInvestment', auth.currentUser.uid), userInfo)
+		navigate("/profile")
 	  })
 
 	  .catch((err) => {

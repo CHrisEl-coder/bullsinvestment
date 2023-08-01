@@ -12,10 +12,11 @@ export function useAuthStatus() {
             setLoggedIn(true)
         }
         setCheckStatus(false)
-    })
-  }, [])
-  return (
+    });
+  }, []);
+  return {
     loggedIn, checkStatus
+  };
     
-  )
+    
 }

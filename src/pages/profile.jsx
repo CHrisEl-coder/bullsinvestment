@@ -2,23 +2,28 @@ import React from 'react'
 import { FaBars, FaIgloo, FaSearch } from 'react-icons/fa'
 import { TbPigMoney, TbReportMoney } from 'react-icons/tb'
 import { GiMoneyStack, GiPayMoney, GiReceiveMoney } from 'react-icons/gi'
-import { Link } from 'react-router-dom'
+import {BiLogOut} from 'react-icons/bi'
+import { Link, useNavigate } from 'react-router-dom'
 import { CiMoneyCheck1, CiWallet } from 'react-icons/ci'
 import '../dash.css'
-import pic from '../ck.jpg'
 import { useState } from 'react'
 import { getAuth } from 'firebase/auth'
 
 
 export default function Profile() {
-  const auth = getAuth()
+  const auth = getAuth() 
+  const navigate = useNavigate()
 
   const [userData, setUserData] = useState({
     name: auth.currentUser.displayName,
     image: auth.currentUser.imageURL
   })
-
   const {name, image} = userData
+
+  function onLogOut () {
+    auth.signOut();
+    navigate("/");
+  }
   return (
     <div className='body'>
       <div className='sidebar'>
@@ -44,6 +49,9 @@ export default function Profile() {
             <li>
               <Link to='' className='side-li'><TbReportMoney/> <span>Transactions</span></Link>
             </li>
+            <li onClick={onLogOut}>
+              <Link to="" className='side-li'><BiLogOut /> <span >Log-Out</span></Link>
+            </li>
           </ul>
         </div>
       </div>
@@ -66,7 +74,7 @@ export default function Profile() {
           </div>
 
           <div className="user-wrapper">
-            <img src={pic} alt=''/>
+            <img src={image} alt=''/>
             <h4>Hello, {name}</h4>
           </div>
 

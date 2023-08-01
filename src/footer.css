@@ -1,6 +1,8 @@
 footer {
     background-color: #eee;
     margin-bottom: 0;
+    overflow-x: hidden;
+    overflow-y: visible;
 }
 
 .links {

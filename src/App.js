@@ -6,10 +6,10 @@ import SignIn from './pages/signIn';
 import Faq from './pages/faq';
 import ForgotPassword from './pages/forgotPassword';
 import Contact from './pages/contact';
-import Profile from './pages/profile';
+import Profile from './pages/Profile';
 import Home from './pages/home';
 import Footer from './component/footer';
-import Private from './component/PrivateRoute';
+import PrivateRoute from './component/PrivateRoute';
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
       <Routes>
         
         <Route path='/' element={<Home />} />
-        <Route path='/profile' element={<Private/>}>
+        <Route path='/profile' element={<PrivateRoute />}>
           <Route path='/profile' element={<Profile />} />
         </Route>
         

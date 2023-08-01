@@ -7,7 +7,7 @@
     
 }
 
-@media (min-width: 400px) and (max-width: 768px) {
+@media (min-width: 400px) and (max-width: 800px) {
     .sec-main{
         display: flex !important;
         flex-direction: column !important;
@@ -17,6 +17,14 @@
         margin-bottom: 20px !important;
     }
 
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 
@@ -248,6 +256,7 @@
 
 .steps {
     padding: 20px 10px;
+    margin-bottom: 120px;
 }
 
 .steps h2 {
@@ -301,24 +310,41 @@
 }
 
 .reviews {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 60px auto;
-    position: relative;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow-x: hidden;
+   overflow-y: visible;
     
 }
 
 
 .reviews div {
+    position: absolute;
     background-color: #101e4a;
-    position: relative;
-    width: 50rem;
+    min-width: fit-content;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0px 6px 5px rgba(20, 20, 20, 0.5);
     padding: 5rem 1rem;
+    opacity: 0;
+    transition: all 0.3s linear;
 }
+
+div .activeSlide {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+div .lastSlide {
+    transform: translateX(-100%);
+}
+
+div .nextSlide {
+    transform: translateX(100%);
+}
+
 
 .reviews div img {
     width: 100px;
@@ -354,7 +380,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    margin: 20px auto;
+    margin: 120px auto 20px auto;
     padding: 40px;
     text-align: center;
 }
