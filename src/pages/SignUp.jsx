@@ -47,13 +47,24 @@ export default function SignUp() {
 			displayName: name,
 		})
 
-		const userInfo = {...SignData}
-		userInfo.timeStamp = serverTimestamp()
-		userInfo.Capital = 0
-		userInfo.Earning = 0
+		sendEmailVerification(auth.currentUser) 
+		   .then(() => {
+			const userInfo = {...SignData}
+			userInfo.timeStamp = serverTimestamp()
+			userInfo.Capital = 0
+			userInfo.Earning = 0
+			userInfo.Transaction = 0
 
-		setDoc(doc(db, 'BullsInvestment', auth.currentUser.uid), userInfo)
-		navigate("/profile")
+			setDoc(doc(db, 'BullsInvestment', auth.currentUser.uid), userInfo)
+			navigate("/profile")
+
+		   })
+
+		   .catch((err) => {
+
+		   });
+
+		
 	  })
 
 	  .catch((err) => {

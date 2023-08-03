@@ -28,6 +28,7 @@ export default function Google() {
           Earnings: 0,
           name: user.displayName,
           email: user.email,
+          Transaction: 0,
           timeStamp: serverTimestamp()
         })
       }

@@ -8,6 +8,8 @@ import { CiMoneyCheck1, CiWallet } from 'react-icons/ci'
 import '../dash.css'
 import { useState } from 'react'
 import { getAuth } from 'firebase/auth'
+import { doc, onSnapshot} from 'firebase/firestore'
+import { db } from '../firebase'
 
 
 export default function Profile() {
@@ -16,9 +18,13 @@ export default function Profile() {
 
   const [userData, setUserData] = useState({
     name: auth.currentUser.displayName,
-    image: auth.currentUser.imageURL
+    image: auth.currentUser.photoURL
   })
   const {name, image} = userData
+
+ 
+
+
 
   function onLogOut () {
     auth.signOut();
@@ -87,7 +93,7 @@ export default function Profile() {
             <div className="card-single">
               <div>
 
-               <h1>$0</h1>
+               <h1>$ 0</h1>
                <span>Capital</span>
 
               </div>
@@ -103,7 +109,7 @@ export default function Profile() {
             <div className="card-single">
 
               <div>
-                <h1>$0</h1>
+                <h1>$ 0</h1>
                 <span>Earnings</span>
               </div>
 
@@ -116,7 +122,7 @@ export default function Profile() {
             
             <div className="card-single">
               <div>
-                <h1>$0</h1>
+                <h1>$ 0</h1>
                 <span>Transaction</span>
               </div>
 

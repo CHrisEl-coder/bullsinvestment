@@ -4,6 +4,8 @@ import { BsPiggyBank } from 'react-icons/bs'
 import { GiPayMoney } from 'react-icons/gi'
 import { AiOutlineDollarCircle } from 'react-icons/ai'
 import { LuShieldCheck } from 'react-icons/lu'
+import { TbCloudDollar } from 'react-icons/tb'
+import { FaCircleDollarToSlot } from 'react-icons/fa'
 import Testimonial from '../component/Testimonial'
 
 export default function Home() {
@@ -57,17 +59,17 @@ export default function Home() {
 				</p>
 			</div>
 			<div>
-				<LuShieldCheck className="shield" id="chooseUs-icons"/>
-				<h3 className='font-bold text-white text-xl font-mono mb-3 pl-3'>Full Transparency</h3>
+				<TbCloudDollar className="shield" id="chooseUs-icons"/>
+				<h3 className='font-bold text-white text-xl font-mono mb-3 pl-3'>Fast Payout</h3>
 				<p className='text-white italic mb-4 border-b-2 p-4'>
-					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto vel mollitia in libero inventore itaque, quo deleniti necessitatibus, cum amet ad ex sed accusantium corrupti velit, odio temporibus maxime quam.
+					We Offer Fast Withdrawals, Your Profits Are Yours Anytime Anywhere.
 				</p>
 			</div>
 			<div>
-				<LuShieldCheck className="shield" id="chooseUs-icons"/>
-				<h3 className='font-mono font-bold text-white text-xl mb-3 pl-3'>Top Notch Security</h3>
+				<FaCircleDollarToSlot className="shield" id="chooseUs-icons"/>
+				<h3 className='font-mono font-bold text-white text-xl mb-3 pl-3'>Low Commisin</h3>
 				<p className='text-white italic border-b-2 p-4 '>
-					Our platform is fully secured, with one of the best TLS/SSL encryption.
+					We Charge Little To No Fee When You Invest With Us, You Keep 99% Of Your Profit.
 				</p>
 			</div>
 
