@@ -15,6 +15,7 @@ import { LuMailCheck } from 'react-icons/lu'
 import logo from '../logo.png'
 import Google from '../component/Google'
 import Fb from '../component/fb'
+import { toast } from 'react-toastify'
 
 export default function SignUp() {
 	const navigate = useNavigate()
@@ -54,20 +55,24 @@ export default function SignUp() {
 			userInfo.Capital = 0
 			userInfo.Earning = 0
 			userInfo.Transaction = 0
+			userInfo.Withtdrawal = 0
+			userInfo.Pending = 0
 
 			setDoc(doc(db, 'BullsInvestment', auth.currentUser.uid), userInfo)
+			toast("SucessFull")
 			navigate("/profile")
 
 		   })
 
 		   .catch((err) => {
-
+			toast(err)
 		   });
 
 		
 	  })
 
 	  .catch((err) => {
+		toast("Sign-Up Unsucessful")
 
 	  })
    }
@@ -84,8 +89,8 @@ export default function SignUp() {
 						<strong>Bulls Investment,</strong> Giving You The Best Investment Arsenal To Upgrade Your Finances, And Live Life The Way You Choose
 					</p>
 					<div className="button">
-					   <button className="mk">Make Inquiry</button>
-					   <button className="join">Join Us</button>
+					   <button className="mk" onClick={navigate("/contact")}>Make Inquiry</button>
+					   <button className="join" onClick={navigate("/sign-up")}>Join Us</button>
 					</div>
 					
 				</div>

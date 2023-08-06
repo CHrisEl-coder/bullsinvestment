@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Fjalla+One&family=Inconsolata:wght@600&family=Oswald:wght@400;500&family=Poppins&family=Raleway:ital,wght@1,300&family=Sacramento&family=Signika+Negative:wght@500&family=Teko:wght@500&display=swap');
 
+@media (min-width: 400px) and  (max-width: 800px) {
+    .cards {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+
+    }
+}
 :root {
     --main-color: #101e4a;
     --body-color: snow;
@@ -22,8 +29,8 @@
     position: absolute;
       left: 0;
       top: 16%;
-      bottom: 1%;
     background: var(--main-color);
+    height: 100vh;
    
 }
 
@@ -167,6 +174,9 @@ main {
     border-radius: 10px;
 }
 
+.card-single:active {
+    background-color: #101e4a;
+}
 .card-single div:last-child span {
     font-size: 3rem;
     color: var(--main-color);
@@ -190,9 +200,14 @@ main {
 .card-single:last-child div:last-child span {
     color: #fff;
 }
+
+.tb-div {
+    overflow-x: auto;
+}
 table {
     margin: 50px auto;
     width: 100%;
+    overflow-x: auto;
    
 }
 
@@ -235,6 +250,7 @@ tr {
       left: 93%;
     padding: 5px 10px;
     background-color: #101e4a;
+    border-radius: 5px;
     font-size: 14px;
     color: snow;
     font-family: Poppins, 'sans-serif';

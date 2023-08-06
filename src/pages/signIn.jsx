@@ -8,6 +8,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth"
 import logo from '../logo.png'
 import Google from '../component/Google'
 import Fb  from '../component/fb'
+import { toast } from "react-toastify"
 
 export default function SignIn() {
   const navigate = useNavigate()
@@ -35,10 +36,11 @@ export default function SignIn() {
       const auth = getAuth()
       const userCredentials = await signInWithEmailAndPassword(auth, email, password)
       if(userCredentials.user) {
+        toast("Logged In")
         navigate('/profile')
       }
     } catch (error) {
-      
+      toast(error)
     }
 
   }

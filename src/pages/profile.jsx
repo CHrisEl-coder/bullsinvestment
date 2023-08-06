@@ -10,11 +10,17 @@ import { useState } from 'react'
 import { getAuth } from 'firebase/auth'
 import { doc, onSnapshot} from 'firebase/firestore'
 import { db } from '../firebase'
+import { useEffect } from 'react'
+import { toast } from 'react-toastify'
 
 
 export default function Profile() {
   const auth = getAuth() 
   const navigate = useNavigate()
+
+  let uid = auth.currentUser.uid
+
+  
 
   const [userData, setUserData] = useState({
     name: auth.currentUser.displayName,
@@ -22,14 +28,74 @@ export default function Profile() {
   })
   const {name, image} = userData
 
+  const [userInfo, setUserInfo] = useState({
+    capital: '',
+    transaction: '',
+    earning: ''
+  })
+
+  useEffect(() => {
+    const docSnap = onSnapshot(doc(db, 'BullsInvestment', uid), (doc) => {
+      setUserInfo({
+        capital: doc.data().Capital,
+        earning: doc.data().Earning,
+        transaction: doc.data().transaction
+      })
+    }); 
+    return docSnap
+  }, [])
+
  
 
 
+  const {capital, earning, transaction} = userInfo;
 
+  function Investment() {
+
+      if (capital !== 0) {
+        toast("You Have An Investment Fund Of " + {capital})
+      }else {
+        toast("No Investment Yet")
+      }
+    } 
+
+    function Transact() {
+
+      if (transaction !== 0) {
+        toast("You Have An Investment Fund Of " + {transaction})
+      }else {
+        toast("No Transaction Yet")
+      }
+    } 
+
+    function Depo() {
+
+      if (capital !== 0) {
+        toast("You Have An Investment Fund Of " + {capital})
+      }else {
+        toast("No Deposit Yet")
+      }
+    } 
+
+    function Witdraw() {
+
+      if (capital !== 0) {
+        toast("You Have An Investment Fund Of " + {earning})
+      }else {
+        toast("No Wthdrawals Yet")
+      }
+    } 
   function onLogOut () {
     auth.signOut();
+    toast("Logged Out")
     navigate("/");
   }
+
+  function onClick(e) {
+    e.preventDefault()
+
+    navigate("/transact-$")
+  } 
   return (
     <div className='body'>
       <div className='sidebar'>
@@ -44,16 +110,16 @@ export default function Profile() {
               <Link to='' className='side-li activate'><FaIgloo></FaIgloo> <span>Dashboard</span></Link>
             </li>
             <li>
-              <Link to='' className='side-li'><TbPigMoney/> <span>Investment</span></Link>
+              <Link onClick={Investment} className='side-li'><TbPigMoney/> <span>Investment</span></Link>
             </li>
             <li>
-              <Link to='' className='side-li'><GiPayMoney/> <span>Deposit</span></Link>
+              <Link onClick={Depo} className='side-li'><GiPayMoney/> <span>Deposit</span></Link>
             </li>
             <li>
-              <Link to='' className='side-li'><GiReceiveMoney/> <span>Withdraw</span></Link>
+              <Link onClick={Witdraw} className='side-li'><GiReceiveMoney/> <span>Withdraw</span></Link>
             </li>
             <li>
-              <Link to='' className='side-li'><TbReportMoney/> <span>Transactions</span></Link>
+              <Link onClick={Transact} className='side-li'><TbReportMoney/> <span>Transactions</span></Link>
             </li>
             <li onClick={onLogOut}>
               <Link to="" className='side-li'><BiLogOut /> <span >Log-Out</span></Link>
@@ -66,13 +132,7 @@ export default function Profile() {
       <div className="main-content">
         <header>
 
-          <h2>
-            <label for="">
-              <FaBars className='bars'/>
-            </label>
-            <span>Dashboard</span>
-  
-          </h2>
+        
 
           <div className="search-wrapper">
             <input type='search' placeholder='Search here' />
@@ -90,10 +150,10 @@ export default function Profile() {
 
           <div className="cards">
 
-            <div className="card-single">
+            <div className="card-single" id='capital'>
               <div>
 
-               <h1>$ 0</h1>
+               <h1>$ {capital}</h1>
                <span>Capital</span>
 
               </div>
@@ -109,7 +169,7 @@ export default function Profile() {
             <div className="card-single">
 
               <div>
-                <h1>$ 0</h1>
+                <h1>$ {earning}</h1>
                 <span>Earnings</span>
               </div>
 
@@ -122,7 +182,7 @@ export default function Profile() {
             
             <div className="card-single">
               <div>
-                <h1>$ 0</h1>
+                <h1>$ {transaction}</h1>
                 <span>Transaction</span>
               </div>
 
@@ -133,114 +193,121 @@ export default function Profile() {
 
           </div>
 
-          <table>
-            <tr>
-              <th>Investment Plan</th>
-              <th>Amount</th>
-              <th>Investment RunTime</th>
-              <th>Percentage</th>
-            </tr>
+          <div className='tb-div'>
+
+            <table>
+              <tr>
+                <th>Investment Plan</th>
+                <th>Amount</th>
+                <th>Investment RunTime</th>
+                <th>Percentage</th>
+              </tr>
 
 
-            <tr>
-              <td>
-                Basic Plan 1
-              </td>
-              <td>
-                $20 - $400
-              </td>
-              <td>
-                24 Hours
-              </td>
-              <td>
-                10%
-              </td>
-              <button className='inv-btn'>Invest</button>
-            </tr>
+              <tr>
+                <td>
+                  Basic Plan 1
+                </td>
+                <td>
+                  $20 - $400
+                </td>
+                <td>
+                  24 Hours
+                </td>
+                <td>
+                  10%
+                </td>
+                <Link to="/transact-$" className='inv-btn'>Invest</Link>
+              </tr>
 
 
-            <tr>
-              <td>
-                Basic Plan 2
-              </td>
-              <td>
-                $400 - $1000
-              </td>
-              <td>
-                48 Hours
-              </td>
-              <td>
-                50%
-              </td>
-              <button className='inv-btn'>Invest</button>
-            </tr>
+              <tr>
+                <td>
+                  Basic Plan 2
+                </td>
+                <td>
+                  $400 - $1000
+                </td>
+                <td>
+                  48 Hours
+                </td>
+                <td>
+                  50%
+                </td>
+                <Link to="/transact-$" className='inv-btn'>Invest</Link>
+              </tr>
 
 
-            <tr>
-              <td>Professional Plan 1</td>
-              <td>
-                $1000 - $1,999
-              </td>
-              <td>
-                72 Hours
-              </td>
-              <td>
-                100%
-              </td>
-              <button className='inv-btn'>Invest</button>
-            </tr>
+              <tr>
+                <td>Professional Plan 1</td>
+                <td>
+                  $1000 - $1,999
+                </td>
+                <td>
+                  72 Hours
+                </td>
+                <td>
+                  100%
+                </td>
+                <Link to="/transact-$" className='inv-btn'>Invest</Link>
+              </tr>
 
 
-            <tr>
-             <td>
-               Professional Plan 2
-             </td>
-             <td>
-               $2000 - $4000
-             </td>
-             <td>
-               96 Hours
-             </td>
+              <tr>
               <td>
-                150%
+                Professional Plan 2
               </td>
-              <button className='inv-btn'>Invest</button>
-            </tr>
+              <td>
+                $2000 - $4000
+              </td>
+              <td>
+                96 Hours
+              </td>
+                <td>
+                  150%
+                </td>
 
-            <tr>
-              <td>
-                Corporate plan 1
-              </td>
-              <td>
-                
-                $4000 - $10,000
-              </td>
-              <td>
-                120 Hours
-              </td>
-              <td>
-                200%
-              </td>
-              <button className='inv-btn'>Invest</button>
-            </tr>
+                <Link to="/transact-$" className='inv-btn'>Invest</Link>
+              </tr>
 
-            <tr>
-              <td>
-                Corporate Plan 2
-              </td>
-              <td>
-                $10,000 - ....
-              </td>
-              <td>
-                144 Hours
-              </td>
-              <td>
-                400%
-              </td>
-              <button className='inv-btn'>Invest</button>
-            </tr>
-          </table>
+              <tr>
+                <td>
+                  Corporate plan 1
+                </td>
+                <td>
+                  
+                  $4000 - $10,000
+                </td>
+                <td>
+                  120 Hours
+                </td>
+                <td>
+                  200%
+                </td>
 
+                <Link to="/transact-$" className='inv-btn'>Invest</Link>
+              </tr>
+
+              <tr>
+                <td>
+                  Corporate Plan 2
+                </td>
+                <td>
+                  $10,000 - ....
+                </td>
+                <td>
+                  144 Hours
+                </td>
+                <td>
+                  400%
+                </td>
+
+                <Link to="/transact-$" className='inv-btn'>Invest</Link>
+              </tr>
+            </table>
+          </div>
+
+          
         </main>
       </div>
     </div>

@@ -4,8 +4,7 @@ import { BsPiggyBank } from 'react-icons/bs'
 import { GiPayMoney } from 'react-icons/gi'
 import { AiOutlineDollarCircle } from 'react-icons/ai'
 import { LuShieldCheck } from 'react-icons/lu'
-import { TbCloudDollar } from 'react-icons/tb'
-import { FaCircleDollarToSlot } from 'react-icons/fa'
+import { FaMoneyCheck, FaFilter } from 'react-icons/fa'
 import Testimonial from '../component/Testimonial'
 
 export default function Home() {
@@ -59,14 +58,14 @@ export default function Home() {
 				</p>
 			</div>
 			<div>
-				<TbCloudDollar className="shield" id="chooseUs-icons"/>
+				<FaMoneyCheck className="shield" id="chooseUs-icons"/>
 				<h3 className='font-bold text-white text-xl font-mono mb-3 pl-3'>Fast Payout</h3>
 				<p className='text-white italic mb-4 border-b-2 p-4'>
 					We Offer Fast Withdrawals, Your Profits Are Yours Anytime Anywhere.
 				</p>
 			</div>
 			<div>
-				<FaCircleDollarToSlot className="shield" id="chooseUs-icons"/>
+				<FaFilter className="shield" id="chooseUs-icons"/>
 				<h3 className='font-mono font-bold text-white text-xl mb-3 pl-3'>Low Commisin</h3>
 				<p className='text-white italic border-b-2 p-4 '>
 					We Charge Little To No Fee When You Invest With Us, You Keep 99% Of Your Profit.

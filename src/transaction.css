@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+.f-div {
+    border: 2px rgba(6, 6, 54, 0.925) solid;
+    margin-top: 10px;
+
+}
+
+
+.f-div div {
+
+    background-color: rgba(6, 6, 54, 0.925);
+    border-radius: 5px;
+    width: calc(100% - 40px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+}
+
+.f-div div label {
+    color: snow;
+}
+
+.f-div div label select {
+    margin-top: 10px;
+}
+
+label {
+    width: 100%;
+    margin: 30px 20px; 
+    font-weight: bold;
+    font-size: 24px;
+}
+
+select {
+    width: calc(100% - 20px);
+    border: grey solid 1px;
+    padding: 5px;
+    margin-left: 10px;
+    font-size: 13px;
+    font-weight: 500;
+
+}
+select {
+    color: grey;
+    opacity: .6;
+}
+
+input {
+    border: 1px solid black;
+    margin-left: 10px;
+    padding: 5px;
+    font-size: 14px;
+    color: grey;
+}
+
+.submit {
+
+    border: none;
+    background-color: rgba(6, 6, 54, 0.925);
+    color: snow;
+    padding: 5px;
+    border-radius: 3px;
+    font-weight: 600;
+    
+}
+
+
+.submit:hover {
+    background-color: snow;
+    box-shadow: 2px 5px 6px rgba(0, 0, 0, .6);
+    color: rgba(6, 6, 54, 0.925);
+    font-weight: 600;
+}

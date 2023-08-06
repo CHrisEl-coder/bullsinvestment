@@ -29,6 +29,8 @@ export default function Google() {
           name: user.displayName,
           email: user.email,
           Transaction: 0,
+          Pending: 0,
+          Withdrawal: 0,
           timeStamp: serverTimestamp()
         })
       }
