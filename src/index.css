@@ -7,14 +7,17 @@
     
 }
 
-@media (min-width: 400px) and (max-width: 800px) {
+@media screen and (max-width: 800px) {
     .sec-main{
-        display: flex !important;
-        flex-direction: column !important;
+       grid-template-columns: 1fr !important;
+       grid-gap: 20px;
     }
 
-    .sec-main div{
-        margin-bottom: 20px !important;
+    div .activeSlide {
+        position: absolute;
+        left: 0 !important; 
+        opacity: 1;
+        transform: translateX(0);
     }
 
 }
@@ -141,19 +144,17 @@
     background-image: linear-gradient(to bottom, rgba(23, 42, 150, .6), rgba(23, 42, 150, .6)), url('fun.jpg') ;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
-    padding: 60px 15px;
-    display: flex;
+    padding: 1rem;
     justify-content: center;
     align-items: center;
     
 }
 
 #quality h2 {
-    position: absolute;
-      top: 0;
-   font-family: Georgia, 'Times New Roman', Times, serif;
-   font-weight: bold;
+   font-family: sans-serif;
+   font-weight: 800;
+   font-size: 24px;
+   margin-bottom: 20px;
    text-align: center;
    color: #f4fdff;
    border-bottom: 2px solid white;
@@ -163,10 +164,8 @@
 
 #chooseUs-icons {
     font-size: 50px;
-    color: whitesmoke;
+    color: #101e4a;
     margin-bottom: 30px;
-    border: 2px solid #101e4a;
-    border-radius: 10px;
 }
 
 .sec-concept h3 {
@@ -256,7 +255,6 @@
 
 .steps {
     padding: 20px 10px;
-    margin-bottom: 120px;
 }
 
 .steps h2 {
@@ -315,24 +313,27 @@
    justify-content: center;
    align-items: center;
    overflow-x: hidden;
-   overflow-y: visible;
+   overflow-y: auto;
     
 }
 
 
-.reviews div {
-    position: absolute;
+.reviews div{
+    position: relative;
     background-color: #101e4a;
-    min-width: fit-content;
-    border-radius: 10px;
-    text-align: center;
     box-shadow: 0px 6px 5px rgba(20, 20, 20, 0.5);
     padding: 5rem 1rem;
+    text-align: center;
+    border-radius: 10px;
+    max-width: 100%;
     opacity: 0;
-    transition: all 0.3s linear;
+    transition: all 0.4s ease-in-out;
 }
 
 div .activeSlide {
+    position: absolute;
+    left: 20%;
+    transform: translate(-50%, -50%);
     opacity: 1;
     transform: translateX(0);
 }
@@ -380,7 +381,6 @@ div .nextSlide {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    margin: 120px auto 20px auto;
     padding: 40px;
     text-align: center;
 }

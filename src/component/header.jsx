@@ -16,7 +16,7 @@ export default function NavBar () {
         <div id="header">
             <div id="nav-main">
                 <img src={logo} alt='logo' id='logo'/>
-                <FaBars className="fa fa-bars" onClick={onClick} id='bars'/>
+                <FaBars className="fa-bars" onClick={onClick} id='bars'/>
             </div>
             <nav id='nav-bar'>
                 <ul>

@@ -193,119 +193,113 @@ export default function Profile() {
 
           </div>
 
-          <div className='tb-div'>
-
-            <table>
-              <tr>
-                <th>Investment Plan</th>
-                <th>Amount</th>
-                <th>Investment RunTime</th>
-                <th>Percentage</th>
-              </tr>
-
-
-              <tr>
-                <td>
+            <div className='plan-div'>
+              <div>
+                <h1>
                   Basic Plan 1
-                </td>
-                <td>
+                </h1>
+                <h3>
                   $20 - $400
-                </td>
-                <td>
+                </h3>
+                <span>
                   24 Hours
-                </td>
-                <td>
+                </span>
+                <sub>
                   10%
-                </td>
+                </sub>
+
                 <Link to="/transact-$" className='inv-btn'>Invest</Link>
-              </tr>
+              </div>
 
-
-              <tr>
-                <td>
+              
+              <div>
+                <h1>
                   Basic Plan 2
-                </td>
-                <td>
+                </h1>
+                <h3>
                   $400 - $1000
-                </td>
-                <td>
+                </h3>
+                <span>
                   48 Hours
-                </td>
-                <td>
+                </span>
+                <sub>
                   50%
-                </td>
-                <Link to="/transact-$" className='inv-btn'>Invest</Link>
-              </tr>
-
-
-              <tr>
-                <td>Professional Plan 1</td>
-                <td>
-                  $1000 - $1,999
-                </td>
-                <td>
-                  72 Hours
-                </td>
-                <td>
-                  100%
-                </td>
-                <Link to="/transact-$" className='inv-btn'>Invest</Link>
-              </tr>
-
-
-              <tr>
-              <td>
-                Professional Plan 2
-              </td>
-              <td>
-                $2000 - $4000
-              </td>
-              <td>
-                96 Hours
-              </td>
-                <td>
-                  150%
-                </td>
+                </sub>
 
                 <Link to="/transact-$" className='inv-btn'>Invest</Link>
-              </tr>
-
-              <tr>
-                <td>
-                  Corporate plan 1
-                </td>
-                <td>
+              </div>
                   
+
+
+              <div>
+                <h1>
+                  Professional Plan 1
+                </h1>
+                <h3>
+                  $1000 - $1,999
+                </h3>
+                <span>
+                  72 Hours
+                </span>
+                <sub>
+                  100%
+                </sub>
+
+                <Link to="/transact-$" className='inv-btn'>Invest</Link>
+              </div>
+
+              <div>
+                <h1>
+                  Professional Plan 2
+                </h1>
+                <h3>
+                  $2000 - $4000
+                </h3>
+                <span>
+                  96 Hours
+                </span>
+                <sub>
+                  150%
+                </sub>
+
+                <Link to="/transact-$" className='inv-btn'>Invest</Link>
+              </div>
+
+              <div>
+                <h1>
+                  Corporate Plan 1
+                </h1>
+                <h3>
                   $4000 - $10,000
-                </td>
-                <td>
+                </h3>
+                <span>
                   120 Hours
-                </td>
-                <td>
+                </span>
+                <sub>
                   200%
-                </td>
+                </sub>
 
                 <Link to="/transact-$" className='inv-btn'>Invest</Link>
-              </tr>
+              </div>
 
-              <tr>
-                <td>
+              <div>
+                <h1>
                   Corporate Plan 2
-                </td>
-                <td>
-                  $10,000 - ....
-                </td>
-                <td>
+                </h1>
+                <h3>
+                  $10,000
+                </h3>
+                <span>
                   144 Hours
-                </td>
-                <td>
-                  400%
-                </td>
+                </span>
+                <sub>
+                  $400%
+                </sub>
 
                 <Link to="/transact-$" className='inv-btn'>Invest</Link>
-              </tr>
-            </table>
-          </div>
+              </div>
+
+            </div>    
 
           
         </main>

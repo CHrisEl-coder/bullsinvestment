@@ -1,10 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Fjalla+One&family=Inconsolata:wght@600&family=Oswald:wght@400;500&family=Poppins&family=Raleway:ital,wght@1,300&family=Sacramento&family=Signika+Negative:wght@500&family=Teko:wght@500&display=swap');
 
-@media (min-width: 400px) and  (max-width: 800px) {
+@media screen and  (max-width: 800px) {
+
+    .body {
+        grid-template-columns: 200px 1fr !important;
+    }
     .cards {
         display: grid !important;
         grid-template-columns: 1fr !important;
 
+    }
+
+    .plan-div {
+        grid-template-columns: 1fr !important;
+    }
+
+    .main-content {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
     }
 }
 :root {
@@ -22,20 +35,18 @@
     font-family: Poppins, sans-serif;
 }
 
-
+.body {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+}
 
 .sidebar {
-    width: 345px;
-    position: absolute;
-      left: 0;
-      top: 16%;
     background: var(--main-color);
-    height: 100vh;
+    margin-top: 100px;
    
 }
 
 .sidebar-brand {
-    height: 90px;
     padding-left: 2rem;
     padding: 1rem 0rem 1rem 2rem;
     color: white;
@@ -54,7 +65,7 @@
 
 .sidebar-menu li {
     width: 100%;
-    margin-bottom: 1.7rem;
+    margin-bottom: 2rem;
     padding-left: 2rem;
 }
 
@@ -79,19 +90,18 @@
     padding-right: 1rem;
 }
 
-.main-content {
-    margin-left: 345px;
-}
+
 
 header {
     display: flex;
     justify-content: space-between;
     padding: 1rem 1.5rem;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
     position: absolute;
-      left: 345px;
+      left: 200px;
       top: 16%;
-    width: calc(100% - 345px);
+    max-width: calc(100% - 150px);
     
 }
 
@@ -143,6 +153,7 @@ header label .bars {
     width: 30px;
     border-radius: 50px;
     margin-right: 1rem;
+    margin-left: 10px;
 }
 
 .user-wrapper small {
@@ -201,53 +212,74 @@ main {
     color: #fff;
 }
 
-.tb-div {
-    overflow-x: auto;
+.plan-div {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 20px;
+    place-items: stretch center;
+    margin-top: 30px;
+
 }
-table {
-    margin: 50px auto;
-    width: 100%;
-    overflow-x: auto;
-   
+
+.plan-div div {
+    position: relative;
+    border: 2px solid #101e4a;
+    border-radius: 8px;
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    place-items: stretch center;
 }
 
+.plan-div div h1 {
+    position: absolute;
+      top: 10px;
+      background-color: #101e4a;
+      color: snow;
+      text-align: center;
+      font-weight: 900;
+      font-size: 18px;
+      font-family: monospace;
+      padding: .5rem;
+      width: calc(100% - 10px);
 
+}
 
-th {
-    height: 60px;
-    text-align: left;
-    background-color: #101e4a;
-    color: #ccc;
-    font-weight: bold;
-    font-family: Poppins, sans-serif;
+.plan-div div h3 {
+    margin-top: 15px;
     font-size: 16px;
+    font-weight: bold;
+    background-color: #fff;
+    padding: .3rem;
 }
 
-th:first-child {
-    border-top-left-radius: 10px;
-    padding-left: 15px;
+.plan-div div span {
+    position: absolute;
+      top: 50%;
+      left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: snow;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: Poppins, sans-serif; 
+    width: calc(100% - 10px);
+    background-color: #101e4a;
+    border-top-right-radius: 15px;
 }
 
-tr:nth-child(even) {
-    background-color: #cecccc;
-}
-
-td {
-    position: relative;
-    padding-left: 1rem;
-    height: 40px;
+.plan-div div sub {
+    margin: 30px;
     font-weight: 700;
-    border-bottom: 1px solid #222222c5;
-    vertical-align: bottom;
-}
-tr {
-    position: relative;
+    font-size: 14px;
 }
 
 .inv-btn {
     position: absolute;
-      bottom: 5px;
-      left: 93%;
+      bottom: 10px;
+    width: calc(100% - 10px);
+    text-align: center;
     padding: 5px 10px;
     background-color: #101e4a;
     border-radius: 5px;
@@ -260,5 +292,6 @@ tr {
 .inv-btn:hover {
      background-color: snow;
      color: #101e4a;
+     opacity: 1;
 }
 

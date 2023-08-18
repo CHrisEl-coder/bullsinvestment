@@ -48,7 +48,8 @@ export default function Testimonial() {
                     <p className='rev'>{review}</p>
                     <p className='name'>{name}</p>
                     <p className='state'>{city}</p>
-                </div>
+                </div> 
+               
                     
             )
         })}

@@ -108,6 +108,7 @@ export default function Home() {
 		</div>
 	</section>
 	<Testimonial />
+
 	<div className='ready'>
 		<p>
 			Are You Ready To Invest With Us
