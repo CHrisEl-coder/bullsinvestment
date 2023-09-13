@@ -16,10 +16,13 @@ import logo from '../logo.png'
 import Google from '../component/Google'
 import Fb from '../component/fb'
 import { toast } from 'react-toastify'
+import { Link } from 'react-router-dom'
 
 export default function SignUp() {
 	const navigate = useNavigate()
 	const location = useLocation()
+
+// Setting Up UserData For Firebase
 	
 	const [SignData, setSignData] = useState({
 		name: '',
@@ -29,13 +32,18 @@ export default function SignUp() {
 
 	const {name, email, password} = SignData;
 
+
+// Function For Typing Into The Form Data
+
 	function onChange(e) {
     setSignData((prevState) => ({
         ...prevState, [e.target.id]: e.target.value,
     }));
-   }
+   };
 
    const [ShowPassword, setShowPassword] = useState(false)
+
+   // Signing User Up With Firebase And Verifying The User
 
    function onSubmit (e) {
 	const auth = getAuth()
@@ -44,6 +52,9 @@ export default function SignUp() {
 
 	createUserWithEmailAndPassword(auth, email, password)
 	  .then(() => {
+
+		// Updating User Name 
+
 		updateProfile(auth.currentUser, {
 			displayName: name,
 		})
@@ -89,8 +100,8 @@ export default function SignUp() {
 						<strong>Bulls Investment,</strong> Giving You The Best Investment Arsenal To Upgrade Your Finances, And Live Life The Way You Choose
 					</p>
 					<div className="button">
-					   <button className="mk" onClick={navigate("/contact")}>Make Inquiry</button>
-					   <button className="join" onClick={navigate("/sign-up")}>Join Us</button>
+					   <Link to="/contact" className="mk btn">Make Inquiry</Link>
+					   <Link to="/sign-up" className="join btn">Join Us</Link>
 					</div>
 					
 				</div>
@@ -112,7 +123,7 @@ export default function SignUp() {
 							<LuMailCheck />
 						</div>
 						<div className="input-div">
-							<input type={ShowPassword ? 'text' : 'password'} placeholder="Password" id="password" name="password" value={password} onChange={onChange}/>
+							<input type={ShowPassword ? 'text' : 'password'} placeholder="Password" id="password" value={password} onChange={onChange}/>
 							{ShowPassword ? <VscEye id="eye" onClick={() => {
 								setShowPassword((prevState) => !prevState)}} /> : <VscEyeClosed id='eye' onClick={() => {
 									setShowPassword((prevState) => !prevState)
@@ -124,7 +135,7 @@ export default function SignUp() {
 						<p className="fc"><a onClick={() => {navigate('/forgot-password')}}>Forgot-Password</a></p>
 					</div>
 					<div className="btn-div">
-						<button type="submit" id="btn">Sign-Up</button>
+						<button type="submit" className='btn' id="btn">Sign-Up</button>
 						<Google />
 						<Fb />
 					</div>

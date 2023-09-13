@@ -45,7 +45,7 @@ async function onSubmit(e) {
 export default function Fb() {
   return (
     <>
-    <button className="fb" onClick={onSubmit}><CiFacebook className='fb-icon'/>Facebook</button>
+    <button className="fb btn" onClick={onSubmit}><CiFacebook className='fb-icon'/>Facebook</button>
     </>
   )
 }

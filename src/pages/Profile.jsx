@@ -15,9 +15,12 @@ import { toast } from 'react-toastify'
 
 
 export default function Profile() {
+
+  // Initializing firebase auth and useNavigate
   const auth = getAuth() 
   const navigate = useNavigate()
 
+// Setting Up The Uid For Users 
   let uid = auth.currentUser.uid
 
   
@@ -34,7 +37,8 @@ export default function Profile() {
     earning: ''
   })
 
-  useEffect(() => {
+  
+    useEffect(() => {
     const docSnap = onSnapshot(doc(db, 'BullsInvestment', uid), (doc) => {
       setUserInfo({
         capital: doc.data().Capital,
@@ -44,6 +48,7 @@ export default function Profile() {
     }); 
     return docSnap
   }, [])
+
 
  
 
@@ -91,11 +96,6 @@ export default function Profile() {
     navigate("/");
   }
 
-  function onClick(e) {
-    e.preventDefault()
-
-    navigate("/transact-$")
-  } 
   return (
     <div className='body'>
       <div className='sidebar'>

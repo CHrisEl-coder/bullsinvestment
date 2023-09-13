@@ -43,6 +43,6 @@ export default function Google() {
   }
   return (
     <>
-    <button type='button' class="google" onClick={onSubmit}><FaGooglePlusG className='google-icon'/>Continue With Google</button></>
+    <button type='button' className="google btn" onClick={onSubmit}><FaGooglePlusG className='google-icon'/>Continue With Google</button></>
   )
 }

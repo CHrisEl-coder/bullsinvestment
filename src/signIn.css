@@ -11,6 +11,7 @@
 
 .sec-2 {
     padding: 1rem;
+    margin-top: 100px;
  }
  
  .main {
@@ -53,7 +54,7 @@
     margin-top: 30px;
  }
  
-  button {
+  .btn {
      background-color: snow;
      padding: 8px;
      border: none;

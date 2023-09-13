@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 import '../signIn.css'
 import { useLocation, useNavigate } from 'react-router'
 import { VscEyeClosed, VscEye } from 'react-icons/vsc'
@@ -11,10 +12,15 @@ import Fb  from '../component/fb'
 import { toast } from "react-toastify"
 
 export default function SignIn() {
+
+// Initializing usenavigate and uselocation 
   const navigate = useNavigate()
   const location = useLocation()
+
+// Setting up the show password and text component 
   const [ShowPassword, setShowPassword] = useState(false)
 
+// Gettin Data From The Form In The Frontebd 
   const [FormData, setFormData] = useState({
     email: '',
     password: ''
@@ -22,12 +28,16 @@ export default function SignIn() {
 
   const {email, password} = FormData;
 
+  // Setting Up The Form Changes 
+
   function onChange(e) {
     setFormData((prevState) => ({
           ...prevState, [e.target.id]: e.target.value,
       
     }));
   }
+
+  // Loging In User In Firebase
 
   async function onSubmit(e) {
     e.preventDefault()
@@ -57,8 +67,8 @@ export default function SignIn() {
               <strong>Bulls Investment,</strong> Giving You The Best Investment Arsenal To Upgrade Your Finances, And Live Life The Way You Choose
             </p>
             <div className="button">
-              <button className="mk">Make Inquiry</button>
-              <button className="join">Join Us</button>
+              <Link to="/contact" className="mk btn">Make Inquiry</Link >
+              <Link to="/signup" className="join btn">Join Us</Link >
             </div>
             
           </div>
@@ -92,7 +102,7 @@ export default function SignIn() {
               }}>Forgot-Password?</a></p>
             </div>
             <div className="btn-div">
-              <button id="btn">Log-in</button>
+              <button className="btn" id="btn">Log-in</button>
               <Google />
               <Fb />
             </div>

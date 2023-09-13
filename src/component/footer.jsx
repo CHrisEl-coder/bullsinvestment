@@ -43,7 +43,7 @@ export default function Footer() {
 				</li>
 			</ul>
 		</div>
-		<div class="copyrights">
+		<div className="copyrights">
 			<ul>
 				<li>
 					<span>
