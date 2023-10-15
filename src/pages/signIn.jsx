@@ -20,7 +20,7 @@ export default function SignIn() {
 // Setting up the show password and text component 
   const [ShowPassword, setShowPassword] = useState(false)
 
-// Gettin Data From The Form In The Frontebd 
+// Gettin Data From The Form In The Frontend 
   const [FormData, setFormData] = useState({
     email: '',
     password: ''
